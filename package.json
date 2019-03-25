@@ -1,5 +1,5 @@
 {
-  "name": "Sample uHoo App",
+  "name": "sample uhoo app",
   "version": "1.0.0",
   "description": "Sample desktop application",
   "main": "src/main.js",
@@ -8,7 +8,10 @@
     "pack": "electron-builder --dir",
     "build": "electron-builder"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paulinem15/uhoo_app.git"
+  },
   "author": "Pauline Manolo",
   "build": {
     "appId": "com.uhoo.desktopapp",
