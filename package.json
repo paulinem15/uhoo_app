@@ -1,0 +1,41 @@
+{
+  "name": "uhoo",
+  "version": "1.0.0",
+  "description": "Desktop Application for uHoo",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.electron.uhoo",
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulinem15/uhoo_app.git"
+  },
+  "keywords": [
+    "uhoo",
+    "desktop",
+    "air",
+    "sensor",
+    "application"
+  ],
+  "author": "Pauline Manolo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulinem15/uhoo_app/issues"
+  },
+  "homepage": "https://github.com/paulinem15/uhoo_app#readme",
+  "devDependencies": {
+    "electron": "^4.1.1",
+    "electron-builder": "^20.39.0"
+  }
+}
