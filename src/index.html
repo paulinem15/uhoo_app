@@ -5,16 +5,19 @@
     <title>Auto Updater</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css">
   </head>
-  <body class="hack">
-    <div class="messages-container"></div>
-    <button id="update">Update</button>
-    <h1>Auto Updater Example</h1>
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
+  <body>
+    <script>
+        const ipcRenderer = require('electron').ipcRenderer;
+        // wait for an updateReady message
+        ipcRenderer.on('updateReady', function(event, text) {
+            // changes the text of the button
+            var container = document.getElementById('ready');
+            container.innerHTML = "new version ready!";
+        })
+    </script>
+    Version: <span id="version">1.0.0</span>
+    <!-- the button onClick sends a quitAndInstall message to the electron main process -->
+    <button id="ready" onClick="ipcRenderer.send('quitAndInstall')">no updates ready</button>
 
-  <script>
-    require('./renderer.js')
-  </script>
+</body>
 </html>
