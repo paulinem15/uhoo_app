@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   </head>
-  <body style="background-color: green">
-    <h1 style="color: white">Hello World!</h1>
-    <h2>This is version <script>
+  <body class="color-white bg-green fontfam welcome">
+    <div>Welcome to uHoo<br/>
+    <span class="small-font">v<script>
     var { app } = require('electron').remote
     document.write(app.getVersion())
-    </script></h2>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    </script></span></div>
+    
   </body>
   <script>
     const { ipcRenderer } = require('electron')

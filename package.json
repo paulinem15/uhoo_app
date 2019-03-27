@@ -1,6 +1,6 @@
 {
   "name": "uhoo",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Desktop Application for uHoo",
   "main": "index.js",
   "scripts": {

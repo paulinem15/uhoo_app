@@ -32,30 +32,30 @@ function sendStatusToWindow(text) {
 }
 
 autoUpdater.on('checking-for-update', () => {
-  sendStatusToWindow('Checking for update...');
+  win.webContents.send('message','Checking for update...');
 })
 
 autoUpdater.on('update-available', (info) => {
-  sendStatusToWindow('Update available.');
+  win.webContents.send('message','Update available.');
 })
 
 autoUpdater.on('update-not-available', (info) => {
-  sendStatusToWindow('Update not available.');
+  win.webContents.send('message','Update not available.');
 })
 
 autoUpdater.on('download-progress', (progressObj) => {
   let log_message = "Download speed: " + progressObj.bytesPerSecond;
   log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
   log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
-  sendStatusToWindow(log_message);
+  win.webContents.send('message',log_message);
 })
 
 autoUpdater.on('update-downloaded', (info) => {
-  sendStatusToWindow('Update downloaded');
+  win.webContents.send('message','Update downloaded');
 });
 
 autoUpdater.on('error', (err) => {
-  sendStatusToWindow('Error in auto-updater. ' + err);
+  win.webContents.send('message','Error in auto-updater. ' + err);
 })
 
 // ipcMain.on('asynchronous-message', (event, arg) => {
