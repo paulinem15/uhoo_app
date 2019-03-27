@@ -7,12 +7,16 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   </head>
   <body class="color-white bg-green fontfam welcome">
-    <div>Welcome to uHoo<br/>
+    <div>Welcome to uHoo!<br/>
     <span class="small-font">v<script>
     var { app } = require('electron').remote
     document.write(app.getVersion())
     </script></span></div>
-    
+    <div class="copyright small-font">Copyright © 
+    <script>
+      var date = new Date()
+      document.write(date.getFullYear())
+    </script> uHoo Limited. All rights reserved.</div>
   </body>
   <script>
     const { ipcRenderer } = require('electron')

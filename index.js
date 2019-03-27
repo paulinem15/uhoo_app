@@ -44,14 +44,14 @@ autoUpdater.on('update-not-available', (info) => {
 })
 
 autoUpdater.on('download-progress', (progressObj) => {
-  let log_message = "Download speed: " + progressObj.bytesPerSecond;
-  log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
-  log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
-  win.webContents.send('message',log_message);
+  // let log_message = "Download speed: " + progressObj.bytesPerSecond;
+  // log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+  // log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+  win.webContents.send('message', 'Downloading process...');
 })
 
 autoUpdater.on('update-downloaded', (info) => {
-  win.webContents.send('message','Update downloaded');
+  win.webContents.send('message','Update downloaded. You can restart the application to see the update.');
 });
 
 autoUpdater.on('error', (err) => {

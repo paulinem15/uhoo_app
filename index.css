@@ -148,6 +148,21 @@ input:focus, button:focus, button:active{
 	border-spacing: 0;
 }
 
+.copyright{
+	position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    margin: auto;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.58;
+    letter-spacing: normal;
+    text-align: center;
+}
+
 /* LOGIN */
 .login-box{
 	/*margin: 5% 30% 0 30%;*/
