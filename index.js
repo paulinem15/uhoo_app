@@ -52,6 +52,7 @@ autoUpdater.on('download-progress', (progressObj) => {
 
 autoUpdater.on('update-downloaded', (info) => {
   win.webContents.send('message','Update downloaded. You can restart the application to see the update.');
+  setTimeout(autoUpdater.quitAndInstall(), 2000)
 });
 
 autoUpdater.on('error', (err) => {
