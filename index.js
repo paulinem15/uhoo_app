@@ -59,10 +59,11 @@ autoUpdater.on('error', (err) => {
   win.webContents.send('message','Error in auto-updater. ' + err);
 })
 
-// ipcMain.on('asynchronous-message', (event, arg) => {
-//   console.log(arg) // prints "ping"
-//   event.sender.send('asynchronous-reply', 'hello')
-// })
+ipcMain.on('update', (event, arg) => {
+  autoUpdater.checkForUpdates();
+  // console.log(arg) // prints "ping"
+  event.sender.send('message', 'Updating')
+})
 
 // ipcMain.on('synchronous-message', (event, arg) => {
 //   console.log(arg) // prints "ping"
@@ -74,7 +75,6 @@ autoUpdater.on('error', (err) => {
 // Some APIs can only be used after this event occurs.
 app.on('ready', function(){
   createWindow()
-  autoUpdater.checkForUpdates();
 })
 
 // Quit when all windows are closed.

@@ -8,10 +8,12 @@
   </head>
   <body class="color-white bg-green fontfam welcome">
     <div>Welcome to uHoo!<br/>
-    <span class="small-font">v<script>
-    var { app } = require('electron').remote
-    document.write(app.getVersion())
-    </script></span></div>
+      <span class="small-font">v<script>
+      var { app } = require('electron').remote
+      document.write(app.getVersion())
+      </script></span>      
+    </div>
+    <button onClick="update()">Update</button>
     <div class="copyright small-font">Copyright © 
     <script>
       var date = new Date()
@@ -24,6 +26,9 @@
     ipcRenderer.on('message', (event, message) => {
       console.log(message) // Prints 'whoooooooh!'
     })
+    function update(){
+      ipcRenderer.send('update', 'true')
+    }
     // ipcRenderer.on('asynchronous-reply', (event, arg) => {
     //   console.log(arg) // prints "pong"
     // })
