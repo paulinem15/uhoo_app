@@ -52,7 +52,6 @@ autoUpdater.on('download-progress', (progressObj) => {
 
 autoUpdater.on('update-downloaded', (info) => {
   win.webContents.send('message','Update downloaded. You can restart the application to see the update.');
-  setTimeout(autoUpdater.quitAndInstall(), 2000)
 });
 
 autoUpdater.on('error', (err) => {
@@ -62,7 +61,6 @@ autoUpdater.on('error', (err) => {
 ipcMain.on('update', (event, arg) => {
   autoUpdater.checkForUpdates();
   // console.log(arg) // prints "ping"
-  event.sender.send('message', 'Updating')
 })
 
 // ipcMain.on('synchronous-message', (event, arg) => {
