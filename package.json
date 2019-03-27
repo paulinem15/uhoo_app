@@ -1,12 +1,12 @@
 {
   "name": "uhoo",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "Desktop Application for uHoo",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder --publish always"
   },
   "build": {
     "appId": "com.electron.uhoo",
@@ -14,7 +14,11 @@
       "target": "dmg"
     },
     "win": {
-      "target": "squirrel"
+      "target": "nsis",
+      "publish": {
+        "provider": "github",
+        "url": "https://github.com/paulinem15/uhoo_app/releases"
+      }
     }
   },
   "repository": {
@@ -40,6 +44,8 @@
   },
   "dependencies": {
     "electron-builder-squirrel-windows": "^20.39.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^4.0.6",
     "update-electron-app": "^1.3.0"
   }
 }
