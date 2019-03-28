@@ -16,7 +16,7 @@
       "publish": {
         "provider": "github",
         "url": "https://github.com/paulinem15/uhoo_app/releases",
-        "token": "50238d8adf90602fa83428ac417d30c8a6d63132"
+        "token": "a557d347352d49282f7d6ae511f4b1304221d89b"
       }
     },
     "win": {
