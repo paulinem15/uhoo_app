@@ -1,32 +1,28 @@
 matrix:
   include:
-    - os: osx
-      osx_image: xcode9.4
-      language: node_js
-      node_js: "10"
-      env:
-        - ELECTRON_CACHE=$HOME/.cache/electron
-        - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+  - os: osx
+    osx_image: xcode9.4
+    language: node_js
+    node_js: '10'
+    env:
+    - ELECTRON_CACHE=$HOME/.cache/electron
+    - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 deploy:
   provider: releases
-  api_key: 
-    secure: "hp2G8QwNB8K9sEQ3aub+swAW0MyRQ2Q2We9h8k7tbNbsCmdS4IpU+c3w0wfankFmC50hpY+37YZVSahXdS3veIZLuLt46oNabbwESTOnWVcBlYsjxlB/IJFtK3tItYlfJ+LQTeHfkydVsjbFesPXfJhGn0L7yT9ingMRRnrXgLo5KHOm3jYpZ8VIT0t7czuMFqlQF1nXXUXMPPc7+dxEtpW3D9Oer7hWe/NDPLagFCxTYLLYHybivW9mZFHFOReAUTPqyqD4Pfwj9+pXK+XozA5L+mEju7mr3qCRIOFyGsXq1gSbsHWBhvHGpg2QMY/2lLb9pW5bekQlYhQd5TAwXrVPdLoew58H9GHrn6fpsdikLet49/htIARW4wXO5rqGMkG/v5nA0VSmoAZHbKMIzxsjjGcf6PGNChRAYk/99AGOrbgf1U5/1uF245FxrNKNbtke1VRuZ3E9kRlticTdjt4FaHcULXm3BfQLtcQ3eWTL28G+yZHuXsp+sazSdt1x5ooL073w4NEW+x1TlgxDYri/BZRL4YnbackNV8DIcnEiFzcqqI25eYW9IDXS03Xw+FQ/ez7RWIQpWpioqwmZCifSMZ1lc8KZsek4N5ufVxoNa7dRUd6fdmnfWXQg5/LdidkexVGE5FZqFU5F0rHD1NMWWHdkJ07Bw+JHhGKDLs4="
-  file: $CRATE_NAME-$TRAVIS_TAG-$TARGET.*
-  skip_cleanup: true
+  api_key:
+    secure: RCN4LboCNOmiIgbnYTkotnMEBQFy1GU7H7ROQ9KNGOF66Y8h0o5wKfyCE5F7dY0g6ZyfoPJ88Jp81UmuDc+B3AeioST5kKQM0cG+RRvzbk0WO/Zf58y95ALasVegEA07hG4C6ORAwAwPc9CrSvRsdIQqDzWsOyqCNIiR/KWz7DB6htTfm9KHpC3p44TKNIci6+FZZo7CKmGLNEtDrr1e+tJtDmvPQQSDS7NGU2zMQOQX3dwrQyhOz+hL+VL1PuI9VWtNBqEFRh2Y4z00lB9gU4LSIbUGK2aof2bW0DG1BG1WjHWUAdtRH5GJdvBYqyLUN5HX60AaCwGfVjGwbrspchQv4cy2XkYezTMC5kVS6TPVIOhqhOOmztJesfkCKgDWgeo8xDM+zFwcYWQA2Nj5T9HW2IaU/HBAg/igFWo8d+r+h8KS5Jg/7gchWWrj3viZlpJeFz+qAJkrpx+lHDxl4T6yl5dVgkDS1U4vXBJlrH1TQMXcMGjbQb/ipS0a0QS4kicdQPWXoiFUnqQ4mCrNOPO0bDmkHm4AOWFlqMxwvP4YWmWe+1vOuaA/RiPs+YX1e721PAs9jLe1p5/CVHm0MukgtGqrrjB4++sd6uAYCUYm6odR4kfss1P16aRobWo2NfeKxl1ia4dUY0X/fQZ7kcHettR1OuBPrvXwHpyi4v0=
+  file: ".travis.yml"
   on:
-    tags: true
-
+    repo: paulinem15/uhoo_app
 cache:
   directories:
-    - node_modules
-    - $HOME/.cache/electron
-    - $HOME/.cache/electron-builder
-
+  - node_modules
+  - "$HOME/.cache/electron"
+  - "$HOME/.cache/electron-builder"
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run dist-mac; fi
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run dist-mac; fi
 before_cache:
-  - rm -rf $HOME/.cache/electron-builder/wine
-
+- rm -rf $HOME/.cache/electron-builder/wine
 branches:
   except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
+  - "/^v\\d+\\.\\d+\\.\\d+$/"
