@@ -7,12 +7,17 @@
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder --publish always",
-    "dist-mac": "electron-builder -- --mac"
+    "dist-mac": "electron-builder -- --mac --publish always"
   },
   "build": {
     "appId": "com.electron.uhoo",
     "mac": {
-      "target": "zip"
+      "target": "dmg",
+      "publish": {
+        "provider": "github",
+        "url": "https://github.com/paulinem15/uhoo_app/releases",
+        "token": "50238d8adf90602fa83428ac417d30c8a6d63132"
+      }
     },
     "win": {
       "target": "nsis",
