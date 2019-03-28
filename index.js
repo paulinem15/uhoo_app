@@ -40,7 +40,7 @@ autoUpdater.on('update-available', (info) => {
 })
 
 autoUpdater.on('update-not-available', (info) => {
-  win.webContents.send('message','Update not available.');
+  win.webContents.send('message','App has the latest version');
 })
 
 autoUpdater.on('download-progress', (progressObj) => {
