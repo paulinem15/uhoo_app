@@ -15,16 +15,14 @@
       "target": "dmg",
       "publish": {
         "provider": "github",
-        "url": "https://github.com/paulinem15/uhoo_app/releases",
-        "token": "887d95febcd3b0873bced4890b705ad7d1215ab1"
+        "url": "https://github.com/paulinem15/uhoo_app/releases"
       }
     },
     "win": {
       "target": "nsis",
       "publish": {
         "provider": "github",
-        "url": "https://github.com/paulinem15/uhoo_app/releases",
-        "token": "887d95febcd3b0873bced4890b705ad7d1215ab1"
+        "url": "https://github.com/paulinem15/uhoo_app/releases"
       }
     }
   },
