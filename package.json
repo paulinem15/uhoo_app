@@ -16,14 +16,15 @@
       "publish": {
         "provider": "github",
         "url": "https://github.com/paulinem15/uhoo_app/releases",
-        "token": "a557d347352d49282f7d6ae511f4b1304221d89b"
+        "token": "e1277e2e5c921af602e84b7bce3950b8a1121dc9"
       }
     },
     "win": {
       "target": "nsis",
       "publish": {
         "provider": "github",
-        "url": "https://github.com/paulinem15/uhoo_app/releases"
+        "url": "https://github.com/paulinem15/uhoo_app/releases",
+        "token": "e1277e2e5c921af602e84b7bce3950b8a1121dc9"
       }
     }
   },
