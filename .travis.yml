@@ -7,6 +7,14 @@ matrix:
       env:
         - ELECTRON_CACHE=$HOME/.cache/electron
         - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+deploy:
+  provider: releases
+  api_key: 
+    secure: "hp2G8QwNB8K9sEQ3aub+swAW0MyRQ2Q2We9h8k7tbNbsCmdS4IpU+c3w0wfankFmC50hpY+37YZVSahXdS3veIZLuLt46oNabbwESTOnWVcBlYsjxlB/IJFtK3tItYlfJ+LQTeHfkydVsjbFesPXfJhGn0L7yT9ingMRRnrXgLo5KHOm3jYpZ8VIT0t7czuMFqlQF1nXXUXMPPc7+dxEtpW3D9Oer7hWe/NDPLagFCxTYLLYHybivW9mZFHFOReAUTPqyqD4Pfwj9+pXK+XozA5L+mEju7mr3qCRIOFyGsXq1gSbsHWBhvHGpg2QMY/2lLb9pW5bekQlYhQd5TAwXrVPdLoew58H9GHrn6fpsdikLet49/htIARW4wXO5rqGMkG/v5nA0VSmoAZHbKMIzxsjjGcf6PGNChRAYk/99AGOrbgf1U5/1uF245FxrNKNbtke1VRuZ3E9kRlticTdjt4FaHcULXm3BfQLtcQ3eWTL28G+yZHuXsp+sazSdt1x5ooL073w4NEW+x1TlgxDYri/BZRL4YnbackNV8DIcnEiFzcqqI25eYW9IDXS03Xw+FQ/ez7RWIQpWpioqwmZCifSMZ1lc8KZsek4N5ufVxoNa7dRUd6fdmnfWXQg5/LdidkexVGE5FZqFU5F0rHD1NMWWHdkJ07Bw+JHhGKDLs4="
+  file: $CRATE_NAME-$TRAVIS_TAG-$TARGET.*
+  skip_cleanup: true
+  on:
+    tags: true
 
 cache:
   directories:
